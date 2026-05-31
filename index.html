@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="theme-color" content="#f8fafc">
+    <title>Threads Accounts</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <main class="app">
+      <header class="topbar">
+        <div>
+          <h1>Threads Accounts</h1>
+          <p><span id="visibleCount">0</span> / <span id="totalCount">0</span></p>
+        </div>
+        <label class="search">
+          <span class="sr-only">아이디 검색</span>
+          <input id="searchInput" type="search" inputmode="search" autocomplete="off" placeholder="아이디 검색">
+        </label>
+      </header>
+
+      <section class="list-wrap" aria-label="계정 목록">
+        <div id="accountList" class="account-list"></div>
+        <p id="emptyState" class="empty" hidden>검색 결과가 없습니다.</p>
+      </section>
+    </main>
+
+    <script src="data.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
