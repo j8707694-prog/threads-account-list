@@ -4,16 +4,34 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
     <meta name="theme-color" content="#f8fafc">
-    <title>Threads Accounts</title>
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="맞팔 확인">
+    <title>맞팔 확인</title>
+    <link rel="manifest" href="manifest.webmanifest">
+    <link rel="icon" href="icons/icon.svg" type="image/svg+xml">
     <link rel="stylesheet" href="styles.css">
   </head>
   <body>
     <main class="app">
       <header class="topbar">
-        <div>
-          <h1>Threads Accounts</h1>
-          <p><span id="visibleCount">0</span> / <span id="totalCount">0</span></p>
+        <div class="title-row">
+          <div>
+            <h1>맞팔 확인</h1>
+            <p><span id="visibleCount">0</span>개 표시 · 전체 <span id="totalCount">0</span>개</p>
+          </div>
+          <button id="installButton" class="install-button" type="button" hidden>설치</button>
         </div>
+
+        <div class="tabs" role="tablist" aria-label="계정 상태">
+          <button id="pendingTab" class="tab is-active" type="button" role="tab" aria-selected="true" data-view="pending">
+            미확인 <span id="pendingCount">0</span>
+          </button>
+          <button id="checkedTab" class="tab" type="button" role="tab" aria-selected="false" data-view="checked">
+            확인한 계정 <span id="checkedCount">0</span>
+          </button>
+        </div>
+
         <label class="search">
           <span class="sr-only">아이디 검색</span>
           <input id="searchInput" type="search" inputmode="search" autocomplete="off" placeholder="아이디 검색">
@@ -22,7 +40,7 @@
 
       <section class="list-wrap" aria-label="계정 목록">
         <div id="accountList" class="account-list"></div>
-        <p id="emptyState" class="empty" hidden>검색 결과가 없습니다.</p>
+        <p id="emptyState" class="empty" hidden></p>
       </section>
     </main>
 
